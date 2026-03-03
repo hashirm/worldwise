@@ -74,7 +74,7 @@ function CitiesProvider({children}){
       dispatch({type:"loading"});
 
       try {
-        const response = await fetch("http://localhost:5174/cities"); 
+        const response = await fetch("https://worldwise-trip.netlify.app/cities"); 
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -121,7 +121,7 @@ function CitiesProvider({children}){
   async function createCity(newCity){
     dispatch({type:"loading"})
     try{
-      const createCityData = await fetch(`http://localhost:5174/cities`,{
+      const createCityData = await fetch(`https://worldwise-trip.netlify.app/cities`,{
         method:"POST",
         body:JSON.stringify(newCity),
         header:{
@@ -146,7 +146,7 @@ function CitiesProvider({children}){
   async function deleteCity(id){
     dispatch({type:"loading"})
     try{
-      await fetch(`http://localhost:5174/cities/${id}`,{
+      await fetch(`https://worldwise-trip.netlify.app/cities/${id}`,{
         method:"delete",
       })
 
