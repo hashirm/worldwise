@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import {useCities } from './context/CitiesContext'
 import styles from './CityList.module.css'
 import CityItem from './CityItem'
@@ -19,7 +19,8 @@ export default function CityList() {
     <ul className={styles.cityList}>{
 
       info.map((city) => (
-          <CityItem key={city.id} info={city}/>
+
+        city.id &&  <CityItem key={city.id} info={city}/>
         )
       )
     }
