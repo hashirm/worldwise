@@ -102,7 +102,7 @@ function CitiesProvider({children}){
 
     try {
      
-      const response = await fetch(`http://localhost:5174/cities/${id}`);
+      const response = await fetch(`https://worldwise-trip.netlify.app/cities/${id}`);
       
       if (!response.ok) {
         throw new Error("Failed to fetch data");
